@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { gemini15Flash, googleAI } from '@genkit-ai/googleai';
+import { gemini20Flash, googleAI } from '@genkit-ai/googleai';
 import { genkit, z } from 'genkit';
 
 const ai = genkit({
@@ -23,7 +23,7 @@ const ai = genkit({
 
 const prompt = ai.definePrompt({
   name: 'Character Prompt',
-  model: gemini15Flash,
+  model: gemini20Flash,
   input: {
     schema: z.object({
       inspiration: z.string(),
