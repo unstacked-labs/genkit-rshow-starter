@@ -23,7 +23,7 @@
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   codelab-ga4id=""
-                  id="genkit-firebase-workshop"
+                  id="docs"
                   title="Genkit Firebase Workshop"
                   environment="web"
                   feedback-link="https://github.com/unstacked-labs/genkit-rshow-starter/issues">
@@ -116,9 +116,9 @@
 import { genkit, z } from &#39;genkit&#39;;
 
 // Initialize Genkit with the Google AI plugin and set a default model.
-const ai = genkit({ 
-  plugins: [googleAI()], 
-  model: gemini20Flash 
+const ai = genkit({
+  plugins: [googleAI()],
+  model: gemini20Flash,
 });
 </code></pre>
 <p>Positive : This setup gives us access to Google&#39;s Gemini models through Genkit&#39;s unified AI interface.</p>
@@ -205,14 +205,14 @@ const githubEventsArraySchema = z.array(githubEventSchema);
         },
       },
     );
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch repos from GitHub: ${response.statusText}`);
     }
-    
+
     const repos = await response.json();
     const reposParsed = z.array(repoSchema).parse(repos);
-    
+
     // Return only the properties we need
     return reposParsed.map((repo) =&gt; ({
       name: repo.name,
@@ -253,14 +253,14 @@ const githubEventsArraySchema = z.array(githubEventSchema);
         },
       },
     );
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch commit messages from GitHub: ${response.statusText}`);
     }
-    
+
     const commits = await response.json();
     const commitsParsed = githubEventsArraySchema.parse(commits);
-    
+
     return (
       commitsParsed
         // Filter for PushEvent type and extract commit messages
@@ -317,12 +317,12 @@ const githubEventsArraySchema = z.array(githubEventSchema);
         temperature: 0.8, // Higher temperature for more creative responses
       },
     });
-    
+
     // Stream the response back to the client
     for await (const chunk of stream) {
       streamCallback(chunk);
     }
-    
+
     const { text } = await response;
     console.log({ text });
     return text;

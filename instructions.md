@@ -1,6 +1,6 @@
 author: Maina Wycliffe
 summary: Learn how to build AI applications with Genkit
-id: genkit-firebase-workshop
+id: docs
 categories: ai,firebase,genkit
 environments: Web
 status: Published
