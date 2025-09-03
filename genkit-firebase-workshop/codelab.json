@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2025-09-03T16:49:28+02:00",
+  "id": "genkit-firebase-workshop",
+  "duration": 0,
+  "title": "Genkit Firebase Workshop",
+  "summary": "Learn how to build AI applications with Genkit",
+  "source": "instructions.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "ai",
+    "firebase",
+    "genkit"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/unstacked-labs/genkit-rshow-starter/issues",
+  "url": "genkit-firebase-workshop"
+}
