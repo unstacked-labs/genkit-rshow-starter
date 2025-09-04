@@ -50,6 +50,8 @@ Duration: 45-60 minutes
 5. Name the workspace **genkit-starter**
 6. Click **Import**
 
+[![Importing Repo into Firebase Studio](images/firebase_studio.gif)](images/firebase_studio.gif)
+
 ---
 
 ## Step 2: Get Your Google AI Studio API Key
@@ -57,6 +59,8 @@ Duration: 45-60 minutes
 1. Open [Google AI Studio](https://aistudio.google.com/)
 2. Generate an API Key (any project is fine)
 3. Copy the API key
+
+![Getting API Key from Google AI Studio](images/ai_studio.gif)
 
 ---
 
@@ -72,10 +76,14 @@ env = {
 };
 ```
 
-3. Save the file.
+!["Adding API Key to dev.nix"](images/add_gemini_key.jpeg)
+
+1. Save the file.
 
 Positive
 : Rebuild the environment when prompted (should appear at the bottom right after saving the API key).
+
+![Rebuilding Environment in Firebase Studio](images/rebuild-environment.jpeg)
 
 ---
 
@@ -310,6 +318,11 @@ const githubGrillerFlow = ai.defineFlow(
         You only have one task: roast the developer based on their GitHub activity and nothing else.
         Return the roast as a single string, no other text or explanation needed.
       `,
+      /* 
+
+        Please note the tools being used here are crucial for fetching the necessary data to inform the AI's response.
+
+      */
       tools: [fetchGithubRepos, fetchCommitMessages],
       config: {
         temperature: 0.8, // Higher temperature for more creative responses
@@ -384,8 +397,8 @@ You've successfully built an AI-powered GitHub analysis application using Fireba
 **Next Steps:**
 
 - Try modifying the roast prompt for different personalities
+- Add more GitHub API endpoints like Github Profile Info, so it can use the user's name and bio in the roast
 - Add more GitHub API endpoints (issues, pull requests, etc.)
-- Implement caching to improve performance
 - Deploy your application to Firebase Functions
 - Explore other Genkit plugins and models
 

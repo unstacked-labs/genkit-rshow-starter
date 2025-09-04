@@ -66,6 +66,7 @@
 <li>Name the workspace <strong>genkit-starter</strong></li>
 <li>Click <strong>Import</strong></li>
 </ol>
+<p><a href="images/firebase_studio.gif" target="_blank"><img alt="Importing Repo into Firebase Studio" src="img/ef5f2ce6f3828b0f.gif"></a></p>
 
 
       </google-codelab-step>
@@ -76,6 +77,7 @@
 <li>Generate an API Key (any project is fine)</li>
 <li>Copy the API key</li>
 </ol>
+<p class="image-container"><img alt="Getting API Key from Google AI Studio" src="img/d9ec033246846b62.gif"></p>
 
 
       </google-codelab-step>
@@ -90,10 +92,12 @@
   GOOGLE_GENAI_API_KEY = &#34;AI STUDIO KEY HERE&#34;;
 };
 </code></pre>
-<ol type="1" start="3">
+<p class="image-container"><img alt="&amp;ldquo;Adding API Key to dev.nix&amp;rdquo;" src="img/e0679524292dc72.jpeg"></p>
+<ol type="1">
 <li>Save the file.</li>
 </ol>
 <p>Positive : Rebuild the environment when prompted (should appear at the bottom right after saving the API key).</p>
+<p class="image-container"><img alt="Rebuilding Environment in Firebase Studio" src="img/ed551f057bfa9b93.jpeg"></p>
 
 
       </google-codelab-step>
@@ -312,6 +316,11 @@ const githubEventsArraySchema = z.array(githubEventSchema);
         You only have one task: roast the developer based on their GitHub activity and nothing else.
         Return the roast as a single string, no other text or explanation needed.
       `,
+      /* 
+
+        Please note the tools being used here are crucial for fetching the necessary data to inform the AI&#39;s response.
+
+      */
       tools: [fetchGithubRepos, fetchCommitMessages],
       config: {
         temperature: 0.8, // Higher temperature for more creative responses
@@ -380,8 +389,8 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 <p><strong>Next Steps:</strong></p>
 <ul>
 <li>Try modifying the roast prompt for different personalities</li>
+<li>Add more GitHub API endpoints like Github Profile Info, so it can use the user&#39;s name and bio in the roast</li>
 <li>Add more GitHub API endpoints (issues, pull requests, etc.)</li>
-<li>Implement caching to improve performance</li>
 <li>Deploy your application to Firebase Functions</li>
 <li>Explore other Genkit plugins and models</li>
 </ul>
