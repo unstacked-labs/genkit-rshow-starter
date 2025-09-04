@@ -42,7 +42,7 @@ Duration: 45-60 minutes
 
 ---
 
-## Step 1: Import the Project into Firebase Studio
+## Import the Project into Firebase Studio
 
 1. Open [Firebase Studio](https://firebase.studio/)
 2. Click **Try Firebase Studio**
@@ -56,7 +56,7 @@ Duration: 45-60 minutes
 
 ---
 
-## Step 2: Get Your Google AI Studio API Key
+## Get Your Google AI Studio API Key
 
 1. Open [Google AI Studio](https://aistudio.google.com/)
 2. Generate an API Key (any project is fine)
@@ -66,7 +66,7 @@ Duration: 45-60 minutes
 
 ---
 
-## Step 3: Add the API Key to Your Project
+## Add the API Key to Your Project
 
 1. In Firebase Studio, open the **dev.nix** file inside the **.idx** folder.
 2. Find the `env` section and add your API key:
@@ -99,7 +99,7 @@ npm install
 
 ---
 
-## Step 5: Set Up Imports and Initialize Genkit
+## Set Up Imports and Initialize Genkit
 
 First, let's examine how we import and initialize Genkit with the Google AI plugin.
 
@@ -122,7 +122,7 @@ Positive
 
 ---
 
-## Step 6: Define Data Schemas with Zod
+## Define Data Schemas with Zod
 
 Next, we'll create type-safe data structures using Zod schemas. These ensure our data from the GitHub API is properly validated.
 
@@ -178,7 +178,7 @@ Positive
 
 ---
 
-## Step 7: Create the GitHub Repositories Tool
+## Create the GitHub Repositories Tool
 
 Now we'll create our first Genkit tool that fetches GitHub repository data.
 
@@ -232,7 +232,7 @@ Negative
 
 ---
 
-## Step 8: Create the Commit Messages Tool
+## Create the Commit Messages Tool
 
 Our second tool will fetch commit messages from a user's recent GitHub activity.
 
@@ -283,7 +283,7 @@ Positive
 
 ---
 
-## Step 9: Create the Main Flow
+## Create the Main Flow
 
 Finally, we'll create the main flow that orchestrates everything together.
 
@@ -348,7 +348,7 @@ Positive
 
 ---
 
-## Step 10: Run and Test the Project
+## Run and Test the Project
 
 Now let's run the Genkit Developer UI to test our GitHub Roaster application.
 

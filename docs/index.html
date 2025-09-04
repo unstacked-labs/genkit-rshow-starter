@@ -58,7 +58,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 1: Import the Project into Firebase Studio" duration="0">
+      <google-codelab-step label="Import the Project into Firebase Studio" duration="0">
         <ol type="1">
 <li>Open <a href="https://firebase.studio/" target="_blank">Firebase Studio</a></li>
 <li>Click <strong>Try Firebase Studio</strong></li>
@@ -72,7 +72,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 2: Get Your Google AI Studio API Key" duration="0">
+      <google-codelab-step label="Get Your Google AI Studio API Key" duration="0">
         <ol type="1">
 <li>Open <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a></li>
 <li>Generate an API Key (any project is fine)</li>
@@ -83,7 +83,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 3: Add the API Key to Your Project" duration="0">
+      <google-codelab-step label="Add the API Key to Your Project" duration="0">
         <ol type="1">
 <li>In Firebase Studio, open the <strong>dev.nix</strong> file inside the <strong>.idx</strong> folder.</li>
 <li>Find the <code>env</code> section and add your API key:</li>
@@ -111,7 +111,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 5: Set Up Imports and Initialize Genkit" duration="0">
+      <google-codelab-step label="Set Up Imports and Initialize Genkit" duration="0">
         <p>First, let&#39;s examine how we import and initialize Genkit with the Google AI plugin.</p>
 <ol type="1">
 <li>Open the <code>index.ts</code> file in your workspace</li>
@@ -131,7 +131,7 @@ const ai = genkit({
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 6: Define Data Schemas with Zod" duration="0">
+      <google-codelab-step label="Define Data Schemas with Zod" duration="0">
         <p>Next, we&#39;ll create type-safe data structures using Zod schemas. These ensure our data from the GitHub API is properly validated.</p>
 <ol type="1">
 <li>Add the repository schema for GitHub repository data:</li>
@@ -183,7 +183,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 7: Create the GitHub Repositories Tool" duration="0">
+      <google-codelab-step label="Create the GitHub Repositories Tool" duration="0">
         <p>Now we&#39;ll create our first Genkit tool that fetches GitHub repository data.</p>
 <ol type="1">
 <li>Add the <code>fetchGithubRepos</code> tool:</li>
@@ -234,7 +234,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 8: Create the Commit Messages Tool" duration="0">
+      <google-codelab-step label="Create the Commit Messages Tool" duration="0">
         <p>Our second tool will fetch commit messages from a user&#39;s recent GitHub activity.</p>
 <ol type="1">
 <li>Add the <code>fetchCommitMessages</code> tool:</li>
@@ -282,7 +282,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 9: Create the Main Flow" duration="0">
+      <google-codelab-step label="Create the Main Flow" duration="0">
         <p>Finally, we&#39;ll create the main flow that orchestrates everything together.</p>
 <ol type="1">
 <li>Add the <code>githubGrillerFlow</code> that combines our tools with AI generation:</li>
@@ -344,7 +344,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 
       </google-codelab-step>
     
-      <google-codelab-step label="Step 10: Run and Test the Project" duration="0">
+      <google-codelab-step label="Run and Test the Project" duration="0">
         <p>Now let&#39;s run the Genkit Developer UI to test our GitHub Roaster application.</p>
 <ol type="1">
 <li>In the terminal, start the Genkit development server:</li>
