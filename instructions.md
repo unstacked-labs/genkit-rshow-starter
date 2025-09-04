@@ -1,4 +1,4 @@
-author: Maina Wycliffe
+author: Maina Wycliffe, Wayne Gakuo
 summary: Learn how to build AI applications with Genkit
 id: docs
 categories: ai,firebase,genkit
@@ -6,11 +6,13 @@ environments: Web
 status: Published
 feedback link: https://github.com/unstacked-labs/genkit-rshow-starter/issues
 
-# Genkit Firebase Workshop
+# Google AI Roadshow - Genkit Hands-on Workshop
 
 ## Overview
 
 In this hands-on codelab, you'll learn how to build AI-powered applications using **Firebase Genkit**. We'll create a fun "GitHub Roaster" application that uses AI to analyze a developer's GitHub profile and generate witty commentary about their coding habits.
+
+_This workshop is brought to you by [Unstacked Labs](https://unstacked.dev) - empowering developers across Africa with cutting-edge technology._
 
 **What you'll learn:**
 
@@ -401,5 +403,30 @@ You've successfully built an AI-powered GitHub analysis application using Fireba
 - Add more GitHub API endpoints (issues, pull requests, etc.)
 - Deploy your application to Firebase Functions
 - Explore other Genkit plugins and models
+
+---
+
+## Resources and Connect With Us
+
+### 📚 Workshop Resources
+
+- **GitHub Repository**: [genkit-rshow-starter](https://github.com/unstacked-labs/genkit-rshow-starter)
+- **Firebase Genkit Documentation**: [Official Docs](https://firebase.google.com/docs/genkit)
+- **Google AI Studio**: [aistudio.google.com](https://aistudio.google.com/)
+
+### 🤝 Connect With the Authors
+
+**Maina Wycliffe**
+
+- 💼 LinkedIn: [Maina Wycliffe](https://linkedin.com/in/mainawycliffe)
+- 🐙 GitHub: [@mainawycliffe](https://github.com/mainawycliffe)
+
+**Wayne Gakuo**
+
+- 🐦 Twitter: [@wayne_gakuo](https://x.com/wayne_gakuo)
+- 💼 LinkedIn: [Wayne Gakuo](https://www.linkedin.com/in/waynegakuo/)
+- 🐙 GitHub: [@waynegakuo](https://github.com/waynegakuo)
+
+---
 
 Happy coding! 🚀
