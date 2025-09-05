@@ -83,9 +83,9 @@ Duration: 45-60 minutes
 
 3. Save the file.
 
-Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).
+   Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).
 
-![Rebuilding Environment in Firebase Studio](images/rebuild-environment.jpeg)
+   ![Rebuilding Environment in Firebase Studio](images/rebuild-environment.jpeg)
 
 ---
 
@@ -108,18 +108,18 @@ First, let's examine how we import and initialize Genkit with the Google AI plug
 1. Open the `index.ts` file in your workspace
 2. Review the following imports and initialization code:
 
-```ts
-import { gemini20Flash, googleAI } from '@genkit-ai/googleai';
-import { genkit, z } from 'genkit';
+   ```ts
+   import { gemini20Flash, googleAI } from '@genkit-ai/googleai';
+   import { genkit, z } from 'genkit';
 
-// Initialize Genkit with the Google AI plugin and set a default model.
-const ai = genkit({
-  plugins: [googleAI()],
-  model: gemini20Flash,
-});
-```
+   // Initialize Genkit with the Google AI plugin and set a default model.
+   const ai = genkit({
+     plugins: [googleAI()],
+     model: gemini20Flash,
+   });
+   ```
 
-Note: This setup gives us access to Google's Gemini models through Genkit's unified AI interface.
+   Note: This setup gives us access to Google's Gemini models through Genkit's unified AI interface.
 
 ---
 
@@ -129,52 +129,52 @@ Next, we'll create type-safe data structures using Zod schemas. These ensure our
 
 1. Add the repository schema for GitHub repository data:
 
-```ts
-// Zod schema for a GitHub repository's relevant data.
-const repoSchema = z.object({
-  name: z.string(),
-  language: z.string().nullable(),
-  pushed_at: z.string(),
-  stargazers_count: z.number(),
-  forks: z.number(),
-});
-```
+   ```ts
+   // Zod schema for a GitHub repository's relevant data.
+   const repoSchema = z.object({
+     name: z.string(),
+     language: z.string().nullable(),
+     pushed_at: z.string(),
+     stargazers_count: z.number(),
+     forks: z.number(),
+   });
+   ```
 
 2. Add the GitHub event schema for commit data:
 
-```ts
-// Zod schema for a single GitHub event.
-const githubEventSchema = z.object({
-  id: z.string(),
-  type: z.string(),
-  repo: z.object({
-    id: z.number(),
-    name: z.string(),
-    url: z.string(),
-  }),
-  payload: z.object({
-    commits: z
-      .array(
-        z.object({
-          sha: z.string(),
-          author: z.object({
-            email: z.string(),
-            name: z.string(),
-          }),
-          message: z.string(),
-          distinct: z.boolean(),
-          url: z.string(),
-        }),
-      )
-      .optional(),
-  }),
-});
+   ```ts
+   // Zod schema for a single GitHub event.
+   const githubEventSchema = z.object({
+     id: z.string(),
+     type: z.string(),
+     repo: z.object({
+       id: z.number(),
+       name: z.string(),
+       url: z.string(),
+     }),
+     payload: z.object({
+       commits: z
+         .array(
+           z.object({
+             sha: z.string(),
+             author: z.object({
+               email: z.string(),
+               name: z.string(),
+             }),
+             message: z.string(),
+             distinct: z.boolean(),
+             url: z.string(),
+           }),
+         )
+         .optional(),
+     }),
+   });
 
-// Zod schema for an array of GitHub events.
-const githubEventsArraySchema = z.array(githubEventSchema);
-```
+   // Zod schema for an array of GitHub events.
+   const githubEventsArraySchema = z.array(githubEventSchema);
+   ```
 
-Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.
+   Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.
 
 ---
 
@@ -353,9 +353,9 @@ Now let's run the Genkit Developer UI to test our GitHub Roaster application.
 
 2. If not, start the Genkit Development UI by running the following command:
 
-```sh
-npx genkit start -- npx tsx --watch index.ts
-```
+   ```sh
+   npx genkit start -- npx tsx --watch index.ts
+   ```
 
 3. Click on the link provided in the terminal (usually `http://localhost:4000`),
    which opens the Genkit Developer UI in your browser.
