@@ -178,7 +178,7 @@ const githubEventSchema = z.object({
 // Zod schema for an array of GitHub events.
 const githubEventsArraySchema = z.array(githubEventSchema);
 </code></pre>
-<p>Positive : Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.</p>
+<p>Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.</p>
 
 
       </google-codelab-step>
@@ -229,7 +229,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
   },
 );
 </code></pre>
-<p>Negative : <strong>Important</strong>: Tools are functions that the AI can call autonomously to gather information. The AI decides when and how to use them based on the tool&#39;s description.</p>
+<p>Note: <strong>Important</strong>: Tools are functions that the AI can call autonomously to gather information. The AI decides when and how to use them based on the tool&#39;s description.</p>
 
 
       </google-codelab-step>
@@ -277,7 +277,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
   },
 );
 </code></pre>
-<p>Positive : This tool extracts commit messages from GitHub&#39;s events API, giving the AI insight into a developer&#39;s coding patterns and commit history.</p>
+<p>Positive: This tool extracts commit messages from GitHub&#39;s events API, giving the AI insight into a developer&#39;s commit history.</p>
 
 
       </google-codelab-step>
@@ -339,7 +339,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
   },
 );
 </code></pre>
-<p>Positive : <strong>Flow Architecture</strong>: Flows orchestrate multiple AI calls and tool usage. They can stream responses in real-time and handle complex multi-step AI interactions.</p>
+<p>Note: <strong>Flow Architecture</strong>: Flows orchestrate multiple AI calls and tool usage. They can stream responses in real-time and handle complex multi-step AI interactions.</p>
 
 
       </google-codelab-step>
@@ -347,12 +347,13 @@ const githubEventsArraySchema = z.array(githubEventSchema);
       <google-codelab-step label="Run and Test the Project" duration="0">
         <p>Now let&#39;s run the Genkit Developer UI to test our GitHub Roaster application.</p>
 <ol type="1">
-<li>In the terminal, start the Genkit development server:</li>
+<li>In the terminal, first check if the Genkit Development UI is running.<a href="images/run-gdu.gif" target="_blank"><img alt="Run Genkit Development UI" src="img/1d7815ae84be301f.gif"></a></li>
+<li>If not, start the Genkit Development UI by running the following command:</li>
 </ol>
 <pre><code language="language-sh" class="language-sh">npx genkit start -- npx tsx --watch index.ts
 </code></pre>
-<ol type="1" start="2">
-<li>Click on the link provided in the terminal (usually <code>http://localhost:4000</code>)</li>
+<ol type="1" start="3">
+<li>Click on the link provided in the terminal (usually <code>http://localhost:4000</code>), which opens the Genkit Developer UI in your browser.<em>Do not type the URL manually, as this won&#39;t work, since the server is running on Firebase Studio&#39;s infrastructure, not your local machine.</em></li>
 <li>In the Genkit Developer UI:<ul>
 <li>Navigate to the <strong>Flows</strong> section</li>
 <li>Find the <code>githubGrillerFlow</code></li>
@@ -364,15 +365,15 @@ const githubEventsArraySchema = z.array(githubEventSchema);
 <li>Click <strong>Run Flow</strong></li>
 <li>Watch as the AI streams its roast in real-time!</li>
 </ul>
-</li>
+<a href="images/genkit-development-ui.gif" target="_blank"><img alt="Genkit Development UI" src="img/4329fcae7d8debe2.gif"></a></li>
 <li>Explore the <strong>Tools</strong> section to see how individual tools work:<ul>
 <li>Test <code>fetchGithubRepos</code> with different usernames</li>
 <li>Try <code>fetchCommitMessages</code> to see commit history analysis</li>
 </ul>
 </li>
 </ol>
-<p>Positive : <strong>Developer UI Features</strong>: The Genkit Developer UI provides powerful debugging capabilities, allowing you to test flows, inspect tool outputs, and monitor AI interactions in real-time.</p>
-<p>Negative : <strong>Rate Limiting</strong>: Be mindful of GitHub&#39;s API rate limits when testing. Unauthenticated requests are limited to 60 per hour per IP address.</p>
+<p>Note: <strong>Developer UI Features</strong>: The Genkit Developer UI provides powerful debugging capabilities, allowing you to test flows, inspect tool outputs, and monitor AI interactions in real-time.</p>
+<p>Note: <strong>Rate Limiting</strong>: Be mindful of GitHub&#39;s API rate limits when testing. Unauthenticated requests are limited to 60 per hour per IP address.</p>
 
 
       </google-codelab-step>

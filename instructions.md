@@ -348,27 +348,37 @@ Note: **Flow Architecture**: Flows orchestrate multiple AI calls and tool usage.
 
 Now let's run the Genkit Developer UI to test our GitHub Roaster application.
 
-1. In the terminal, start the Genkit development server:
+1. In the terminal, first check if the Genkit Development UI is running.
+
+   [![Run Genkit Development UI](images/run-gdu.gif)](images/run-gdu.gif)
+
+2. If not, start the Genkit Development UI by running the following command:
 
 ```sh
 npx genkit start -- npx tsx --watch index.ts
 ```
 
-2. Click on the link provided in the terminal (usually `http://localhost:4000`)
+3. Click on the link provided in the terminal (usually `http://localhost:4000`),
+   which opens the Genkit Developer UI in your browser.
 
-3. In the Genkit Developer UI:
+   _Do not type the URL manually, as this won't work, since the server is running on Firebase
+   Studio's infrastructure, not your local machine._
+
+4. In the Genkit Developer UI:
 
    - Navigate to the **Flows** section
    - Find the `githubGrillerFlow`
    - Click on it to open the flow tester
 
-4. Test the flow:
+5. Test the flow:
 
    - Enter a GitHub username in the input field (try your own or `octocat`)
    - Click **Run Flow**
    - Watch as the AI streams its roast in real-time!
 
-5. Explore the **Tools** section to see how individual tools work:
+   [![Genkit Development UI](images/genkit-development-ui.gif)](images/genkit-development-ui.gif)
+
+6. Explore the **Tools** section to see how individual tools work:
    - Test `fetchGithubRepos` with different usernames
    - Try `fetchCommitMessages` to see commit history analysis
 
