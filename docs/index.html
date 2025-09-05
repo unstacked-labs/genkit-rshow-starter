@@ -76,9 +76,8 @@
         <ol type="1">
 <li>Open <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a></li>
 <li>Generate an API Key (any project is fine)</li>
-<li>Copy the API key</li>
+<li>Copy the API key<img alt="Getting API Key from Google AI Studio" src="img/d9ec033246846b62.gif"></li>
 </ol>
-<p class="image-container"><img alt="Getting API Key from Google AI Studio" src="img/d9ec033246846b62.gif"></p>
 
 
       </google-codelab-step>
@@ -86,18 +85,15 @@
       <google-codelab-step label="Add the API Key to Your Project" duration="0">
         <ol type="1">
 <li>In Firebase Studio, open the <strong>dev.nix</strong> file inside the <strong>.idx</strong> folder.</li>
-<li>Find the <code>env</code> section and add your API key:</li>
-</ol>
-<pre><code language="language-nix" class="language-nix">env = {
+<li>Find the <code>env</code> section and add your API key:<pre><code language="language-nix" class="language-nix">env = {
   # TODO Get an API key from https://g.co/ai/idxGetGeminiKey
   GOOGLE_GENAI_API_KEY = &#34;AI STUDIO KEY HERE&#34;;
 };
 </code></pre>
-<p class="image-container"><img alt="&amp;ldquo;Adding API Key to dev.nix&amp;rdquo;" src="img/e0679524292dc72.jpeg"></p>
-<ol type="1">
+<img alt="&amp;ldquo;Adding API Key to dev.nix&amp;rdquo;" src="img/e0679524292dc72.jpeg"></li>
 <li>Save the file.</li>
 </ol>
-<p>Positive : Rebuild the environment when prompted (should appear at the bottom right after saving the API key).</p>
+<p>Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).</p>
 <p class="image-container"><img alt="Rebuilding Environment in Firebase Studio" src="img/ed551f057bfa9b93.jpeg"></p>
 
 
@@ -107,6 +103,7 @@
         <p>In the terminal, run:</p>
 <pre><code language="language-sh" class="language-sh">npm install
 </code></pre>
+<p><a href="images/npm_install.gif" target="_blank"><img alt="Installing Dependencies" src="img/2d370156ae60da46.gif"></a></p>
 
 
       </google-codelab-step>
@@ -126,7 +123,7 @@ const ai = genkit({
   model: gemini20Flash,
 });
 </code></pre>
-<p>Positive : This setup gives us access to Google&#39;s Gemini models through Genkit&#39;s unified AI interface.</p>
+<p>Note: This setup gives us access to Google&#39;s Gemini models through Genkit&#39;s unified AI interface.</p>
 
 
       </google-codelab-step>
@@ -185,9 +182,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
     
       <google-codelab-step label="Create the GitHub Repositories Tool" duration="0">
         <p>Now we&#39;ll create our first Genkit tool that fetches GitHub repository data.</p>
-<ol type="1">
-<li>Add the <code>fetchGithubRepos</code> tool:</li>
-</ol>
+<p>Add the <code>fetchGithubRepos</code> tool:</p>
 <pre><code language="language-ts" class="language-ts">const fetchGithubRepos = ai.defineTool(
   {
     name: &#39;fetchGithubRepos&#39;,
@@ -236,9 +231,7 @@ const githubEventsArraySchema = z.array(githubEventSchema);
     
       <google-codelab-step label="Create the Commit Messages Tool" duration="0">
         <p>Our second tool will fetch commit messages from a user&#39;s recent GitHub activity.</p>
-<ol type="1">
-<li>Add the <code>fetchCommitMessages</code> tool:</li>
-</ol>
+<p>Add the <code>fetchCommitMessages</code> tool:</p>
 <pre><code language="language-ts" class="language-ts">const fetchCommitMessages = ai.defineTool(
   {
     name: &#39;fetchCommitMessages&#39;,
@@ -277,16 +270,13 @@ const githubEventsArraySchema = z.array(githubEventSchema);
   },
 );
 </code></pre>
-<p>Positive: This tool extracts commit messages from GitHub&#39;s events API, giving the AI insight into a developer&#39;s commit history.</p>
+<p>Note: This tool extracts commit messages from GitHub&#39;s events API, giving the AI insight into a developer&#39;s commit history.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Create the Main Flow" duration="0">
-        <p>Finally, we&#39;ll create the main flow that orchestrates everything together.</p>
-<ol type="1">
-<li>Add the <code>githubGrillerFlow</code> that combines our tools with AI generation:</li>
-</ol>
+        <p>Finally, we&#39;ll create the main flow that orchestrates everything together. Add the <code>githubGrillerFlow</code> that combines our tools with AI generation:</p>
 <pre><code language="language-ts" class="language-ts">const githubGrillerFlow = ai.defineFlow(
   {
     name: &#39;githubGrillerFlow&#39;,

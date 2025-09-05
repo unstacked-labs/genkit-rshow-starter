@@ -62,7 +62,7 @@ Duration: 45-60 minutes
 2. Generate an API Key (any project is fine)
 3. Copy the API key
 
-![Getting API Key from Google AI Studio](images/ai_studio.gif)
+   ![Getting API Key from Google AI Studio](images/ai_studio.gif)
 
 ---
 
@@ -71,19 +71,18 @@ Duration: 45-60 minutes
 1. In Firebase Studio, open the **dev.nix** file inside the **.idx** folder.
 2. Find the `env` section and add your API key:
 
-```nix
-env = {
-  # TODO Get an API key from https://g.co/ai/idxGetGeminiKey
-  GOOGLE_GENAI_API_KEY = "AI STUDIO KEY HERE";
-};
-```
+   ```nix
+   env = {
+     # TODO Get an API key from https://g.co/ai/idxGetGeminiKey
+     GOOGLE_GENAI_API_KEY = "AI STUDIO KEY HERE";
+   };
+   ```
 
-!["Adding API Key to dev.nix"](images/add_gemini_key.jpeg)
+   !["Adding API Key to dev.nix"](images/add_gemini_key.jpeg)
 
-1. Save the file.
+3. Save the file.
 
-Positive
-: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).
+Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).
 
 ![Rebuilding Environment in Firebase Studio](images/rebuild-environment.jpeg)
 
@@ -96,6 +95,8 @@ In the terminal, run:
 ```sh
 npm install
 ```
+
+[![Installing Dependencies](images/npm_install.gif)](images/npm_install.gif)
 
 ---
 
@@ -117,8 +118,7 @@ const ai = genkit({
 });
 ```
 
-Positive
-: This setup gives us access to Google's Gemini models through Genkit's unified AI interface.
+Note: This setup gives us access to Google's Gemini models through Genkit's unified AI interface.
 
 ---
 
@@ -181,7 +181,7 @@ Note: Zod schemas provide runtime type validation and excellent TypeScript integ
 
 Now we'll create our first Genkit tool that fetches GitHub repository data.
 
-1. Add the `fetchGithubRepos` tool:
+Add the `fetchGithubRepos` tool:
 
 ```ts
 const fetchGithubRepos = ai.defineTool(
@@ -234,7 +234,7 @@ Note: **Important**: Tools are functions that the AI can call autonomously to ga
 
 Our second tool will fetch commit messages from a user's recent GitHub activity.
 
-1. Add the `fetchCommitMessages` tool:
+Add the `fetchCommitMessages` tool:
 
 ```ts
 const fetchCommitMessages = ai.defineTool(
@@ -276,15 +276,13 @@ const fetchCommitMessages = ai.defineTool(
 );
 ```
 
-Positive: This tool extracts commit messages from GitHub's events API, giving the AI insight into a developer's commit history.
+Note: This tool extracts commit messages from GitHub's events API, giving the AI insight into a developer's commit history.
 
 ---
 
 ## Create the Main Flow
 
-Finally, we'll create the main flow that orchestrates everything together.
-
-1. Add the `githubGrillerFlow` that combines our tools with AI generation:
+Finally, we'll create the main flow that orchestrates everything together. Add the `githubGrillerFlow` that combines our tools with AI generation:
 
 ```ts
 const githubGrillerFlow = ai.defineFlow(
