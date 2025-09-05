@@ -4,6 +4,7 @@ id: docs
 categories: ai,firebase,genkit
 environments: Web
 status: Published
+source: https://unstacked.dev
 feedback link: https://github.com/unstacked-labs/genkit-rshow-starter/issues
 
 # Google AI Roadshow - Genkit Hands-on Workshop
