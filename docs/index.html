@@ -91,10 +91,8 @@
 };
 </code></pre>
 <img alt="&amp;ldquo;Adding API Key to dev.nix&amp;rdquo;" src="img/e0679524292dc72.jpeg"></li>
-<li>Save the file.</li>
+<li>Save the file.Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).<img alt="Rebuilding Environment in Firebase Studio" src="img/ed551f057bfa9b93.jpeg"></li>
 </ol>
-<p>Note: Rebuild the environment when prompted (should appear at the bottom right after saving the API key).</p>
-<p class="image-container"><img alt="Rebuilding Environment in Firebase Studio" src="img/ed551f057bfa9b93.jpeg"></p>
 
 
       </google-codelab-step>
@@ -112,9 +110,7 @@
         <p>First, let&#39;s examine how we import and initialize Genkit with the Google AI plugin.</p>
 <ol type="1">
 <li>Open the <code>index.ts</code> file in your workspace</li>
-<li>Review the following imports and initialization code:</li>
-</ol>
-<pre><code language="language-ts" class="language-ts">import { gemini20Flash, googleAI } from &#39;@genkit-ai/googleai&#39;;
+<li>Review the following imports and initialization code:<pre><code language="language-ts" class="language-ts">import { gemini20Flash, googleAI } from &#39;@genkit-ai/googleai&#39;;
 import { genkit, z } from &#39;genkit&#39;;
 
 // Initialize Genkit with the Google AI plugin and set a default model.
@@ -123,7 +119,8 @@ const ai = genkit({
   model: gemini20Flash,
 });
 </code></pre>
-<p>Note: This setup gives us access to Google&#39;s Gemini models through Genkit&#39;s unified AI interface.</p>
+Note: This setup gives us access to Google&#39;s Gemini models through Genkit&#39;s unified AI interface.</li>
+</ol>
 
 
       </google-codelab-step>
@@ -131,9 +128,7 @@ const ai = genkit({
       <google-codelab-step label="Define Data Schemas with Zod" duration="0">
         <p>Next, we&#39;ll create type-safe data structures using Zod schemas. These ensure our data from the GitHub API is properly validated.</p>
 <ol type="1">
-<li>Add the repository schema for GitHub repository data:</li>
-</ol>
-<pre><code language="language-ts" class="language-ts">// Zod schema for a GitHub repository&#39;s relevant data.
+<li>Add the repository schema for GitHub repository data:<pre><code language="language-ts" class="language-ts">// Zod schema for a GitHub repository&#39;s relevant data.
 const repoSchema = z.object({
   name: z.string(),
   language: z.string().nullable(),
@@ -142,10 +137,8 @@ const repoSchema = z.object({
   forks: z.number(),
 });
 </code></pre>
-<ol type="1" start="2">
-<li>Add the GitHub event schema for commit data:</li>
-</ol>
-<pre><code language="language-ts" class="language-ts">// Zod schema for a single GitHub event.
+</li>
+<li>Add the GitHub event schema for commit data:<pre><code language="language-ts" class="language-ts">// Zod schema for a single GitHub event.
 const githubEventSchema = z.object({
   id: z.string(),
   type: z.string(),
@@ -175,7 +168,8 @@ const githubEventSchema = z.object({
 // Zod schema for an array of GitHub events.
 const githubEventsArraySchema = z.array(githubEventSchema);
 </code></pre>
-<p>Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.</p>
+Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.</li>
+</ol>
 
 
       </google-codelab-step>
@@ -338,11 +332,9 @@ const githubEventsArraySchema = z.array(githubEventSchema);
         <p>Now let&#39;s run the Genkit Developer UI to test our GitHub Roaster application.</p>
 <ol type="1">
 <li>In the terminal, first check if the Genkit Development UI is running.<a href="images/run-gdu.gif" target="_blank"><img alt="Run Genkit Development UI" src="img/1d7815ae84be301f.gif"></a></li>
-<li>If not, start the Genkit Development UI by running the following command:</li>
-</ol>
-<pre><code language="language-sh" class="language-sh">npx genkit start -- npx tsx --watch index.ts
+<li>If not, start the Genkit Development UI by running the following command:<pre><code language="language-sh" class="language-sh">npx genkit start -- npx tsx --watch index.ts
 </code></pre>
-<ol type="1" start="3">
+</li>
 <li>Click on the link provided in the terminal (usually <code>http://localhost:4000</code>), which opens the Genkit Developer UI in your browser.<em>Do not type the URL manually, as this won&#39;t work, since the server is running on Firebase Studio&#39;s infrastructure, not your local machine.</em></li>
 <li>In the Genkit Developer UI:<ul>
 <li>Navigate to the <strong>Flows</strong> section</li>
