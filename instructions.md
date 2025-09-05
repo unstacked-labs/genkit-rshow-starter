@@ -173,8 +173,7 @@ const githubEventSchema = z.object({
 const githubEventsArraySchema = z.array(githubEventSchema);
 ```
 
-Positive
-: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.
+Note: Zod schemas provide runtime type validation and excellent TypeScript integration, ensuring data integrity throughout your application.
 
 ---
 
@@ -227,8 +226,7 @@ const fetchGithubRepos = ai.defineTool(
 );
 ```
 
-Negative
-: **Important**: Tools are functions that the AI can call autonomously to gather information. The AI decides when and how to use them based on the tool's description.
+Note: **Important**: Tools are functions that the AI can call autonomously to gather information. The AI decides when and how to use them based on the tool's description.
 
 ---
 
@@ -278,8 +276,7 @@ const fetchCommitMessages = ai.defineTool(
 );
 ```
 
-Positive
-: This tool extracts commit messages from GitHub's events API, giving the AI insight into a developer's coding patterns and commit history.
+Positive: This tool extracts commit messages from GitHub's events API, giving the AI insight into a developer's commit history.
 
 ---
 
@@ -343,8 +340,7 @@ const githubGrillerFlow = ai.defineFlow(
 );
 ```
 
-Positive
-: **Flow Architecture**: Flows orchestrate multiple AI calls and tool usage. They can stream responses in real-time and handle complex multi-step AI interactions.
+Note: **Flow Architecture**: Flows orchestrate multiple AI calls and tool usage. They can stream responses in real-time and handle complex multi-step AI interactions.
 
 ---
 
@@ -376,11 +372,9 @@ npx genkit start -- npx tsx --watch index.ts
    - Test `fetchGithubRepos` with different usernames
    - Try `fetchCommitMessages` to see commit history analysis
 
-Positive
-: **Developer UI Features**: The Genkit Developer UI provides powerful debugging capabilities, allowing you to test flows, inspect tool outputs, and monitor AI interactions in real-time.
+Note: **Developer UI Features**: The Genkit Developer UI provides powerful debugging capabilities, allowing you to test flows, inspect tool outputs, and monitor AI interactions in real-time.
 
-Negative
-: **Rate Limiting**: Be mindful of GitHub's API rate limits when testing. Unauthenticated requests are limited to 60 per hour per IP address.
+Note: **Rate Limiting**: Be mindful of GitHub's API rate limits when testing. Unauthenticated requests are limited to 60 per hour per IP address.
 
 ---
 
